@@ -5,7 +5,7 @@ import uuid
 
 class Course:
 
-    def __init__(self,course_name,course_mark):
+    def __init__(self, course_name, course_mark):
         self.course_id = uuid.uuid4()
         self.course_name = course_name
         self.course_mark = course_mark
@@ -23,8 +23,34 @@ class Student:
         Student.total_students += 1
         Student.student_list.append(self)
 
+
     def enroll_new_course(self, course):
         self.courses_list.append(course)
+
+    def get_student_details(self):
+        return self.__dict__
+
+    def get_student_courses(self):
+        for course in self.courses_list:
+            print(f'cours name : {course.course_name}')
+            print(f'cours name : {course.course_mark}')
+            print()
+            print()
+
+    def get_student_average(self):
+        total_marks = 0
+        for course in self.courses_list:
+            total_marks += course.course_mark
+        if len(self.courses_list) > 0:
+            average = total_marks / len(self.courses_list)
+            return average
+        else:
+            return 0
+student_list = []
+
+
+
+
 
 
 
