@@ -56,6 +56,7 @@ while True:
                               "4.Get Student Average\n"
                               "5.Add Course to student with mark.\n"
                               "6.Exit"))
+
         if selection == 1:
             student_number = input('Enter Student Number: ')
             exists = False
@@ -77,6 +78,42 @@ while True:
                 new_student = Student(student_name,student_age,student_number)
                 student_list.append(new_student)
                 print("Student Added Successfully")
+
+
+
+
+        elif selection == 2 :
+            student_number = input('Enter Student Number: ')
+            exists = False
+            for student in student_list:
+                if student.student_number == student_number:
+                    student_list.remove(student)
+                    exists = True
+                    break
+            if exists:
+                print('the student deleted')
+            else:
+                print('Student Not Exist')
+
+        elif selection == 3 :
+            student_number = input('Enter Student Number: ')
+            exists = False
+            for student in student_list:
+                if student.student_number == student_number:
+                    print(f'student name : {student.student_name}')
+                    print(f'student name : {student.student_age}')
+                    print(f'student name : {student.student_number}')
+                    print('the courses : ')
+                    student.get_student_courses()
+                    exists = True
+                    break
+
+            if  not exists:
+                print('the student deleted')
+
+
+
+
 
 
 
