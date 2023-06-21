@@ -112,14 +112,20 @@ while True:
                 print('the student deleted')
 
 
+        elif selection == 4 :
+            student_number = input('Enter Student Number: ')
+            exists = False
+            for student in student_list:
+                if student.student_number == student_number:
+                    avarage = student.get_student_average()
+                    print(f'the avarage is : {avarage}')
 
 
+                    exists = True
+                    break
 
-
-
-
-
-
+            if  not exists:
+                print('Student Not Exist')
 
 
 
