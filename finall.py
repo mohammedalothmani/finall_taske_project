@@ -127,6 +127,35 @@ while True:
             if  not exists:
                 print('Student Not Exist')
 
+        elif selection == 5 :
+            student_number = input('Enter Student Number: ')
+            exists = False
+            for student in student_list:
+                if student.student_number == student_number:
+                    course_name = input('inter the  course name')
+                    while True:
+                        try:
+                            course_name = float(input('enter the course mark'))
+                            break
+                        except ValueError:
+                            print('nvalid Value  ')
+
+                    course = Course(course_name,course_name)
+                    student.enroll_new_course(course)
+
+                    exists = True
+                    break
+
+            if  not exists:
+                print('Student Not Exist')
+        elif selection == 6:
+            break
+    except ValueError:
+        print('Invalid selection . must be from 1 to 6')
+
+
+
+
 
 
 
